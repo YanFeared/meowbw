@@ -1449,10 +1449,10 @@ run(function()
 						if canDebug then
 							if inputService.TouchEnabled then
 								task.spawn(function()
-									blockPlacer:autoBridge(workspace:GetServerTimeNow() - bedwars.KnockbackController:getLastKnockbackTime() >= 0.2)
+									blockPlacer:autoBridge(workspace:GetServerTimeNow() - bedwars.KnockbackController:getLastKnockbackTime() >= 0.1)
 								end)
 							else
-								if (workspace:GetServerTimeNow() - bedwars.BlockCpsController.lastPlaceTimestamp) >= ((1 / 12) * 0.5) then
+								if (workspace:GetServerTimeNow() - bedwars.BlockCpsController.lastPlaceTimestamp) >= ((1 / 12) * 0.3) then
 									local mouseinfo
 									if canDebug then
 										mouseinfo = blockPlacer.clientManager:getBlockSelector():getMouseInfo(0)
@@ -1521,9 +1521,9 @@ run(function()
 	CPS = AutoClicker:CreateTwoSlider({
 		Name = 'CPS',
 		Min = 1,
-		Max = 9,
-		DefaultMin = 7,
-		DefaultMax = 7
+		Max = 20,
+		DefaultMin = 17,
+		DefaultMax = 20
 	})
 	AutoClicker:CreateToggle({
 		Name = 'Place Blocks',
